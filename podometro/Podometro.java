@@ -6,12 +6,12 @@
  * @author    - pon aquí tu nombre - 
  */
 public class Podometro {
-    private final char HOMBRE='H';
-    private final char MUJER='M';
-    private final double ZANCADA_HOMBRE = 0.45;
-    private final double ZANCADA_MUJER = 0.41;
-    private final int SABADO= 6;
-    private final int DOMINGO=7;
+    private static final char HOMBRE='H';
+    private static final char MUJER='M';
+    private static final double ZANCADA_HOMBRE = 0.45;
+    private static final double ZANCADA_MUJER = 0.41;
+    private static final int SABADO= 6;
+    private static final int DOMINGO=7;
     // atributos
     private String marca;
     private double altura;//metros
@@ -83,21 +83,17 @@ public class Podometro {
             caminatasNoche++;
         }
         switch(dia){
-            case 1:
-            case 2:
-            case 3:
-            case 4:    
-            case 5:
-                totalPasosLaborables+=pasos;
-                totalDistanciaSemana+=pasos*longitudZancada/100.0;
-                break;
-            case 6:
+            case SABADO:
                 totalPasosSabado+=pasos;
-                totalDistanciaFinSemana+=pasos*longitudZancada/100.0;
+                totalDistanciaFinSemana+=pasos*longitudZancada/100000.0;
                 break;
-            case 7:
+            case DOMINGO:
                 totalPasosDomingo+=pasos;
-                totalDistanciaFinSemana+=pasos*longitudZancada/100.0;
+                totalDistanciaFinSemana+=pasos*longitudZancada/100000.0;
+                break;
+            default:
+                totalPasosLaborables+=pasos;
+                totalDistanciaSemana+=pasos*longitudZancada/100000.0;
                 break;
   
         }
