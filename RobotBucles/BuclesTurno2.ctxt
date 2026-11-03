@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=BuclesTurno2
+comment0.text=\r\n\ \ \r\n\ @author\ \ \r\n\ \ \r\n
+comment1.params=
+comment1.target=BuclesTurno2()
+comment1.text=\r\n\ Constructor\ \ \r\n
+comment2.params=n
+comment2.target=int\ obtenerPrimeraCifra(int)
+comment2.text=\r\n\ \ Devuelve\ la\ primera\ cifra\ de\ n\r\n\ \ Asumimos\ n\ positivo\r\n\ \ \r\n\ \ Si\ n\ \=\ 2345\ devuelve\ 2\r\n\ \ Si\ n\ \=\ 12\ devuelve\ 1\r\n\ \ Si\ n\ \=\ 7\ devuelve\ 7\r\n
+comment3.params=n
+comment3.target=java.lang.String\ generarAsteriscos(int)
+comment3.text=\r\n\ \ Devuelve\ una\ cadena\ formada\ por\ n\ asteriscos\r\n\ \ Asumimos\ n\ positivo\r\n\ \ Hacer\ con\ for\r\n
+comment4.params=min\ max
+comment4.target=void\ generarAleatorios(int,\ int)
+comment4.text=\r\n\ \ Generar\ n\u00BAs\ aleatorios\ entre\ min\ y\ max\ (incluidos).\r\n\ \ Parar\ cuando\ salga\ el\ valor\ min\ o\ cuando\ se\ hayan\ generado\ un\ m\u00E1ximo\ de\ 20\ valores\r\n\ \ \r\n\ \ Cada\ n\u00BA\ se\ muestra\ en\ pantalla\ formateado\ a\ 8\ posiciones\ y\ \r\n\ \ a\ su\ lado\ se\ escribe\ una\ cadena\ con\ tantos\ asteriscos\ como\ indique\ \r\n\ \ el\ valor\ de\ su\ primera\ cifra\r\n\ \ La\ cadena\ se\ formatea\ a\ 15\ posiciones\ y\ ajustada\ a\ la\ derecha\r\n\ \ \ \r\n\ \ Usar\ bucles\ while\r\n
+numComments=5
