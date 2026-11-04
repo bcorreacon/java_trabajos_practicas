@@ -21,9 +21,21 @@ public class AppRobot
      */
     public static void main(String[] args)
     {
-         //TODO
-         
-         
+         Robot rob = new Robot("R2D2",50,50, new Direccion(2));
+         System.out.println(rob.toString());
+         System.out.println();
+         rob.mover(12);
+         rob.mover(10);
+         rob.cambiarDireccion();
+         rob.mover(7);
+         rob.mover(2);
+         rob.mover(3);
+         System.out.println();
+         System.out.println("Situacion final");
+         System.out.println(rob.toString());
+         System.out.println();
+         System.out.println("Replicada del robot");
+         System.out.println(rob.obtenerReplica());
          
     }
 }

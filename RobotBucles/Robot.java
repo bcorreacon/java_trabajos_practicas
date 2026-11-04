@@ -29,7 +29,7 @@ public class Robot
     public Robot(String nombre){
         this.nombre= nombre;
         posicion = new Punto(0,0);
-        direcion = new Direccion(NORTE);
+        direccion = new Direccion();
 
     }
 
@@ -41,9 +41,9 @@ public class Robot
      */
     public Robot(String nombre, int x, int y, Direccion direccion)    {
         this.nombre=nombre;
-        this.x=x;
-        this.y=y;
-        direccion = new Direccion(NORTE);
+        this.direccion = direccion;
+        posicion = new Punto(x,y);
+        
 
     }
 
@@ -88,7 +88,7 @@ public class Robot
      *  
      */
     public  void cambiarDireccion()   {
-        cambiarDireccion(NORTE);
+        direccion.cambiarDireccion();
     }
 
     /**
@@ -102,7 +102,13 @@ public class Robot
      */
     public  void mover(int distancia)
     {
-        //TODO
+        if(direccion.esNorte()){
+            System.out.println("avanzando hacia el norte: "+distancia);
+            posicion.setY(posicion.getY() + distancia);
+        }else {
+            System.out.println("avanzando hacia el sur: "+distancia);
+            posicion.setY(posicion.getY() - distancia);
+        }
 
     }
 
@@ -110,9 +116,9 @@ public class Robot
      *   Devuelve un robot nuevo, réplica del actual
      *   (mismo nombre, posición y dirección)
      */
-    public ...... obtenerReplica() {
-        //TODO
-
+    public Robot obtenerReplica() {
+        return new Robot(nombre,posicion.getX(),posicion.getY(),direccion);
+        
     }
 
     /**
@@ -122,7 +128,9 @@ public class Robot
      */
     public  String toString()   {
         //TODO
-        return "";
+        return  "Nombre: "+nombre +"\n" +
+                "Direccion: "+direccion +"\n" +
+                "Posicion: "+posicion;
 
     }
 }
