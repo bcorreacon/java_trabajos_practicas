@@ -18,8 +18,8 @@ public class Paquete
      * alto, ancho, largo (en cm) y peso 8 Kg
      */
     public Paquete()    {
-        //TODO
-         
+        dimension = new Dimension(40.0,30.0,50.0);
+        peso= 8.0;
 
     }
 
@@ -30,8 +30,9 @@ public class Paquete
      *  Se crea aquí el generador
      */
     public Paquete(double alto, double ancho, double largo)    {
-        //TODO
-
+        dimension = new Dimension(alto,ancho,largo);
+        generador= new Random();
+        peso=generador.nextInt(2,9);
     }
 
     /**
@@ -40,8 +41,8 @@ public class Paquete
      * 
      */
     public Paquete(Dimension dimension, double peso)    {
-        //TODO
-
+        this.dimension=dimension;
+        this.peso=peso;
     }
 
     /**
@@ -65,9 +66,9 @@ public class Paquete
      * El volumen = alto x ancho x largo
      */
     public double calcularVolumen() {
-       //TODO
-       return 0;
-
+       
+       return this.dimension.getAlto()*this.dimension.getAncho()*this.dimension.getLargo();
+        
     }
 
     /**
@@ -75,8 +76,8 @@ public class Paquete
      * Peso volumétrico = volumen del paquete / 5000
      */
     public double calcularPesoVolumetrico() {
-        //TODO
-       return 0;
+        
+       return calcularVolumen()/5000;
 
     }
 
@@ -86,9 +87,11 @@ public class Paquete
      *      
      */
     public double calcularPesoFacturable() {
-        //TODO
-       return 0;
-
+       if(peso>calcularPesoVolumetrico()){
+       return peso;
+        }else{
+            return calcularPesoVolumetrico();
+        }
     }
 
 
@@ -97,8 +100,8 @@ public class Paquete
      * Se obtienen copias también de los objetos que contenga
      */
     public Paquete obtenerCopia() {
-        //TODO
-       return null;
+        
+       return new Paquete(this.dimension,this.peso);
 
     }
 
@@ -107,8 +110,15 @@ public class Paquete
      *  (leer enunciado)
      */
     public String toString() {
-        //TODO
-       return null;
+        StringBuilder str = new StringBuilder();
+        str.append("Descripcion del paquete");
+        str.append("Alto:     "+dimension.getAlto()+"(cm)\n");
+        str.append("Ancho:     "+dimension.getAncho()+"(cm)\n");
+        str.append("Largo:     "+dimension.getLargo()+"(cm)\n");
+        str.append("Peso real:     "+this.peso+"(kg)\n");
+        str.append("volumen:  "+calcularVolumen()+"(cm)\n");
+        str.append("Peso volumentrico:     "+calcularPesoVolumetrico()+"(cm)\n");
+       return str.toString();
 
     }
     
