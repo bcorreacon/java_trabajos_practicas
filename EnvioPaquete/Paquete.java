@@ -100,8 +100,11 @@ public class Paquete
      * Se obtienen copias también de los objetos que contenga
      */
     public Paquete obtenerCopia() {
-        
-       return new Paquete(this.dimension,this.peso);
+        Dimension copiaDimension = new Dimension(
+                    dimension.getAlto(),
+                    dimension.getAncho(),
+                    dimension.getLargo());
+       return new Paquete(copiaDimension,this.peso);
 
     }
 

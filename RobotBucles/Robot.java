@@ -117,7 +117,8 @@ public class Robot
      *   (mismo nombre, posición y dirección)
      */
     public Robot obtenerReplica() {
-        return new Robot(nombre,posicion.getX(),posicion.getY(),direccion);
+        Direccion direccionCopia = new Direccion(direccion.getDireccion());
+        return new Robot(nombre,posicion.getX(),posicion.getY(),direccionCopia);
         
     }
 

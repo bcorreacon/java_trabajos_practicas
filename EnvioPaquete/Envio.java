@@ -55,8 +55,11 @@ public class Envio
      * (dependerá de cuántos paquetes estén a null)
      */
     public int getNumeroPaquetes() {
-        //TODO
-       return 0;
+        int num=0;
+        if (this.paquete1!= null){num++;}
+        if (this.paquete2!= null){num++;}
+        if (this.paquete3!= null){num++;}
+         return num;
 
     }
 
@@ -66,7 +69,7 @@ public class Envio
      */
     public boolean envioCompleto() {
        //TODO
-       return false;
+       return (getNumeroPaquetes()==3) ;
 
     }
 
@@ -79,10 +82,19 @@ public class Envio
      */
     public void addPaquete(Paquete paquete) {
        //TODO
-        
-
-    }
-
+        if(envioCompleto()){
+            System.out.println("No se admiten mas paquetes en el envio");
+        }else{
+            if(getNumeroPaquetes()==0){
+                this.paquete1=paquete;
+            }else if(getNumeroPaquetes()==1){
+                this.paquete2=paquete;
+            }else if(getNumeroPaquetes()==2){
+                this.paquete3=paquete;
+            }
+                
+            }
+        }
     /**
      * Calcula y devuelve el coste total del envío
      * 
@@ -95,9 +107,18 @@ public class Envio
      *  
      */
     public double calcularCosteTotalEnvio() {
-        //TODO
-       return 0;
-
+        double peso1;
+        double peso2;
+        double peso3;
+        double costo=0.0;
+            if(paquete1!=null){
+                peso1 =paquete1.getPeso();
+            }if(paquete2!=null){
+                peso2 =paquete2.getPeso();
+            }if(paquete3!=null){
+                peso3 =paquete3.getPeso();
+            }
+        return Math.ceil(costo);
     }
 
     /**
