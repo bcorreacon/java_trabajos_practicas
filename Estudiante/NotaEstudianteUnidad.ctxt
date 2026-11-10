@@ -1,0 +1,34 @@
+#BlueJ class context
+#Tue Nov 10 16:58:13 CET 2026
+comment0.target=NotaEstudianteUnidad
+comment0.text=\r\n Un objeto de esta clase est\u00E1 asociado con una unidad de trabajo\r\n y guarda la nota que un estudiante ha sacado en los controles, actividades y\r\n proyectos de esa unidad\r\n
+comment1.params=unidad notaControles notaActividades notaProyectos
+comment1.target=NotaEstudianteUnidad(UnidadTrabajo, double, double, double)
+comment1.text=\r\n Constructor\r\n
+comment10.target=double calcularNotaUnidad()
+comment10.text=\r\n Calcula y devuelve la nota obtenida en la UT teniendo\r\n en cuenta la ponderaci\u00F3n de los instrumentos de evaluaci\u00F3n\r\n
+comment11.target=java.lang.String toString()
+comment11.text=\r\n Representaci\u00F3n textual del objeto (ver enunciado)\r\n
+comment12.target=void print()
+comment12.text=\r\n Este m\u00E9todo se ha incluido solo para testear la clase m\u00E1s f\u00E1cilmente\r\n
+comment2.target=UnidadTrabajo getUnidad()
+comment2.text=\r\n Accesor para la UT\r\n
+comment3.params=unidad
+comment3.target=void setUnidad(UnidadTrabajo)
+comment3.text=\r\n Accesor para la UT\r\n
+comment4.target=double getNotaControles()
+comment4.text=\r\n Accesor para nota controles\r\n
+comment5.params=notaControles
+comment5.target=void setNotaControles(double)
+comment5.text=\r\n Mutador para nota controles\r\n
+comment6.target=double getNotaActividades()
+comment6.text=\r\n Accesor para nota actividades\r\n
+comment7.params=notaActividades
+comment7.target=void setNotaActividades(double)
+comment7.text=\r\n Mutador para nota actividades\r\n
+comment8.target=double getNotaProyectos()
+comment8.text=\r\n Accesor para nota proyectos\r\n
+comment9.params=notaProyectos
+comment9.target=void setNotaProyectos(double)
+comment9.text=\r\n Mutador para nota proyectos\r\n
+numComments=13

@@ -1,0 +1,27 @@
+#BlueJ class context
+#Tue Nov 10 16:13:53 CET 2026
+comment0.target=PonderacionInstrumentos
+comment0.text=\r\n Un objeto de esta clase almacena la ponderaci\u00F3n que tiene\r\n cada instrumento de evaluaci\u00F3n (los controles, las actividades\r\n y los proyectos)\r\n
+comment1.params=controles actividades proyectos
+comment1.target=PonderacionInstrumentos(int, int, int)
+comment1.text=\r\n Constructor  \r\n
+comment2.target=int getControles()
+comment2.text=\r\n Accesor ponderaci\u00F3n controles\r\n
+comment3.params=controles
+comment3.target=void setControles(int)
+comment3.text=\r\n Mutador ponderaci\u00F3n controles\r\n
+comment4.target=int getActividades()
+comment4.text=\r\n Accesor ponderaci\u00F3n actividades\r\n
+comment5.params=actividades
+comment5.target=void setActividades(int)
+comment5.text=\r\n Mutador ponderaci\u00F3n actividades\r\n
+comment6.target=int getProyectos()
+comment6.text=\r\n Accesor ponderaci\u00F3n protectos\r\n
+comment7.params=proyectos
+comment7.target=void setProyectos(int)
+comment7.text=\r\n Mutador ponderaci\u00F3n protectos\r\n
+comment8.target=java.lang.String toString()
+comment8.text=\r\n Representaci\u00F3n textual del objeto\r\n
+comment9.target=void print()
+comment9.text=\r\n Este m\u00E9todo se ha incluido solo para testear la clase m\u00E1s f\u00E1cilmente\r\n
+numComments=10
