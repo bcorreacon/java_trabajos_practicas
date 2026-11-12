@@ -88,9 +88,9 @@ public class NotaEstudianteUnidad {
         
         PonderacionInstrumentos pond = unidad.getPonderacion();
         
-        a=notaControles * (pond.getControles()/100);
-        b=notaActividades *(pond.getActividades()/100);
-        c=notaProyectos *(pond.getProyectos()/100);
+        a=notaControles * (pond.getControles()/100.0);
+        b=notaActividades *(pond.getActividades()/100.0);
+        c=notaProyectos *(pond.getProyectos()/100.0);
         return a+b+c;
 
     }
@@ -101,11 +101,12 @@ public class NotaEstudianteUnidad {
      @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Controles: " + this.notaControles + "\t");
-        sb.append("Actividades clase: " + this.notaActividades + "\t");
-        sb.append("Proyectos: " + this.notaProyectos + "\n");
-        sb.append("Nota final obtenida en Unidad de Trabajo" + calcularNotaUnidad() + "\n");
-        sb.append("-------------------------------------------------------------------------");
+        sb.append(unidad.toString()+"\n");
+        sb.append("Controles: " + String.format("%6.2f",this.notaControles) + "\n");
+        sb.append("Actividades clase: " + String.format("%6.2f",this.notaActividades) + "\n");
+        sb.append("Proyectos: " + String.format("%6.2f",this.notaProyectos) + "\n");
+        sb.append("Nota final obtenida en Unidad de Trabajo" + String.format("%6.2f",calcularNotaUnidad()) + "\n");
+        sb.append("-".repeat(80)+"\n");
         return sb.toString();
     
     }

@@ -1,19 +1,22 @@
 #BlueJ class context
-#Tue Nov 10 16:13:54 CET 2026
 comment0.target=Fecha
-comment0.text=\r\n Representa un fecha\r\n
-comment1.params=dia mes year
-comment1.target=Fecha(int, int, int)
-comment1.text=\r\n Constructor\r\n
-comment2.target=int getDia()
-comment2.text=\r\n Accesor d\u00EDa\r\n
-comment3.target=int getMes()
-comment3.text=\r\n Accesor mes\r\n
-comment4.target=int getYear()
-comment4.text=\r\n Accesor year\r\n
+comment0.text=\r\n\ Representa\ un\ fecha\r\n
+comment1.params=dia\ mes\ year
+comment1.target=Fecha(int,\ int,\ int)
+comment1.text=\r\n\ Constructor\r\n
+comment2.params=
+comment2.target=int\ getDia()
+comment2.text=\r\n\ Accesor\ d\u00EDa\r\n
+comment3.params=
+comment3.target=int\ getMes()
+comment3.text=\r\n\ Accesor\ mes\r\n
+comment4.params=
+comment4.target=int\ getYear()
+comment4.text=\r\n\ Accesor\ year\r\n
 comment5.params=fecha
-comment5.target=boolean antesQue(Fecha)
-comment5.text=\r\n Devuelve true si la fecha actual es anterior a\r\n la recibida\r\n
-comment6.target=java.lang.String toString()
-comment6.text=\r\n Representaci\u00F3n textual de la fecha\r\n
+comment5.target=boolean\ antesQue(Fecha)
+comment5.text=\r\n\ Devuelve\ true\ si\ la\ fecha\ actual\ es\ anterior\ a\r\n\ la\ recibida\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Representaci\u00F3n\ textual\ de\ la\ fecha\r\n
 numComments=7
