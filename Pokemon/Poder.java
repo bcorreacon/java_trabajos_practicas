@@ -11,7 +11,6 @@ public class Poder
     private String tipo;
     private int potencia;
     private int energiaConsumida;
-    private Pokemon pokemon;
     //   - nombre (String): nombre del poder. Ejemplo: "Lanzallamas".
     //   - tipo (String): "Agua", "Fuego" o "Tierra".
     //   - potencia (int): fuerza del poder.

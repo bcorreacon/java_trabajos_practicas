@@ -89,7 +89,7 @@ public class Combate
          if (turno.equals(pokemon1.getNombre())){
             turno=pokemon2.getNombre();
         }else {
-            turno=pokemon1.getNombre(); ;
+            turno=pokemon1.getNombre(); 
         }
     }
 
@@ -142,6 +142,8 @@ public class Combate
                  } else{
                      return 1.0;
                  }
+             default:
+                 System.out.println("Debes seleccionar un tipo Agua, Fuego o Tierra");
          }
         //       Atacante \ Defensor |  Agua  | Fuego  | Tierra
         //       --------------------+--------+--------+--------
@@ -160,6 +162,12 @@ public class Combate
         // TODO: si el modificador es mayor que 1, muestra "¡Es muy eficaz! (x2.0)".
         // TODO: si es menor que 1, muestra "No es muy eficaz... (x0.5)".
         // TODO: si es 1, no muestres nada.
+        if (modificador>1.0){
+            System.out.println("¡Es muy eficaz! (x2.0)");
+            
+        }else if(modificador<1.0) {
+            System.out.println("No es muy eficaz... (x0.5)");
+        }
     }
 
     /**
@@ -168,7 +176,8 @@ public class Combate
     public boolean puedeUsar(Pokemon pokemon, Poder poder){
         // TODO: devuelve true si el poder NO es null y la energía del pokemon es
         //       mayor o igual que la energía que consume el poder.
-        return false;
+        
+        return (poder!=null && (pokemon.getEnergia()>=poder.getEnergiaConsumida()));
     }
 
     /**
@@ -179,12 +188,52 @@ public class Combate
         // TODO: declara tres variables Poder (disponible1, disponible2, disponible3)
         //       iniciadas a null y un contador int cantidad = 0.
         //       Recuerda: NO se pueden usar arrays. Aún no los hemos enseñado.
+        Poder disponible1=null;
+        Poder disponible2=null;
+        Poder disponible3=null;
+        int cantidad=0;
         // TODO: revisa los tres poderes del pokemon con puedeUsar. Cada poder que se
         //       pueda usar guárdalo en el primer hueco libre y suma 1 a cantidad.
+        if(puedeUsar(pokemon,pokemon.getPoder1())){
+            disponible1=pokemon.getPoder1();
+            cantidad++;
+        }
+        if(puedeUsar(pokemon,pokemon.getPoder2())){
+            if(disponible1==null){
+                disponible1=pokemon.getPoder2();
+                cantidad++;
+            }else{
+                disponible2=pokemon.getPoder2();
+                cantidad++;
+            }
+        }
+        if(puedeUsar(pokemon,pokemon.getPoder3())){
+            if(disponible1==null){
+                disponible1=pokemon.getPoder3();
+                cantidad++;
+            }else if(disponible2==null){
+                disponible2=pokemon.getPoder3();
+                cantidad++;
+            } else{
+                disponible3=pokemon.getPoder3();
+                cantidad++;
+            }
+            
+        }
         // TODO: si cantidad es 0, devuelve null.
         // TODO: sortea un número con random.nextInt(cantidad) y devuelve
         //       disponible1 si sale 0, disponible2 si sale 1 o disponible3 si sale 2.
-        return null;
+        if(cantidad==0){
+            return null;
+        }
+        int numeroRandom=random.nextInt(cantidad);
+        if(numeroRandom==0){
+            return disponible1;
+        }else if(numeroRandom==1){
+            return disponible2;
+        } else{
+            return disponible3;
+        }
     }
 
     /**
@@ -244,11 +293,23 @@ public class Combate
      */
     public void jugarTurno(){
         // TODO: obtén el atacante (getPokemonConTurno) y el defensor (getPokemonSinTurno).
+        Pokemon atacante = getPokemonConTurno();
+        Pokemon defensor = getPokemonSinTurno();
         // TODO: muestra "Turno de ..." con el nombre del atacante.
+        System.out.println("Turno de "+ atacante.getNombre());
         // TODO: llama a atacar y después a mostrarEstado.
+        atacar(atacante, defensor);
+        mostrarEstado();
         // TODO: si el defensor está debilitado, muestra que se ha quedado sin vida
         //       y guarda al atacante como ganador.
+        if (defensor.estaDebilitado()){
+            ganador = atacante;
+            System.out.println(defensor.getNombre()+" se ha quedado sin vida.");
+        }
+        
         // TODO: llama a esperarIntro y después a cambiarTurno.
+        esperarIntro();
+        cambiarTurno();
     }
 
     /**
@@ -288,6 +349,18 @@ public class Combate
            Se deberá tener en cuenta si alguno/s de los 
            poderes del pokemon es vacío (nulo)
         */
+       System.out.println("Poderes de "+pokemon.getNombre());
+       if(pokemon.getPoder1()!= null){
+           System.out.println(pokemon.getPoder1().toString());
+       }
+       
+       if(pokemon.getPoder2()!= null){
+           System.out.println(pokemon.getPoder2().toString());
+       }
+       
+       if(pokemon.getPoder3()!= null){
+          System.out.println(pokemon.getPoder3().toString()); 
+       }
        
     }
 }
