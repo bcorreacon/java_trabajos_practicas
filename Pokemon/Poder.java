@@ -95,4 +95,5 @@ public class Poder
         str.append("Energia: "+this.energiaConsumida+"\n");
         return str.toString();
     }
+    
 }

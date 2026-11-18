@@ -13,13 +13,6 @@ public class PokemonApp
 
         Combate combate = new Combate(pokemon1, pokemon2);
         combate.comenzar();
-        // Poder poder = new Poder("lanzallamas","fuego");
-        // Pokemon pokemon = new Pokemon("beldum","Fuego",100,80);
-        // pokemon.recibirDanio(40);
-        // pokemon.recibirDanio(60);
-        
-        // System.out.println(pokemon.getVida());
-        // System.out.println(pokemon.estaDebilitado());
-        
+       
     }
 }

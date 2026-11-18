@@ -171,7 +171,11 @@ public class Pokemon
      */
     public void ganarEnergia(int cantidad){
         // TODO: suma la cantidad a la energía.
-        energia +=cantidad;
+        if (energia+ cantidad>100){
+            energia=100;
+        }else{
+            energia +=cantidad;
+        }
     }
 
     /**
@@ -182,4 +186,19 @@ public class Pokemon
         return (vida<=0);
         
     }
+    public boolean tienePoderDisponible(){
+        if(poder1!=null && energia>= poder1.getEnergiaConsumida()){
+            return true;
+        }
+        if(poder2!=null && energia>= poder2.getEnergiaConsumida()){
+            return true;
+        }
+        if(poder3!=null && energia>= poder3.getEnergiaConsumida()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
 }

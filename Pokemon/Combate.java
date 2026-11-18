@@ -32,6 +32,7 @@ public class Combate
         this.pokemon2 = pokemon2;
         // TODO: deja el ganador a null.
         ganador= null;
+
         // TODO: crea el objeto Random y el objeto Scanner (new Scanner(System.in)).
         random = new Random();
         teclado = new Scanner(System.in);
@@ -43,6 +44,7 @@ public class Combate
         if(numeroSuerte ==2){
             turno=pokemon2.getNombre();
         }
+        
     }
 
     public String getTurno(){
@@ -54,7 +56,6 @@ public class Combate
         // TODO: devuelve el ganador (o null si aún no hay).
         return ganador;
     }
-
     /**
      * Devuelve el pokemon que tiene el turno.
      */
@@ -302,11 +303,11 @@ public class Combate
         mostrarEstado();
         // TODO: si el defensor está debilitado, muestra que se ha quedado sin vida
         //       y guarda al atacante como ganador.
+        
         if (defensor.estaDebilitado()){
             ganador = atacante;
             System.out.println(defensor.getNombre()+" se ha quedado sin vida.");
         }
-        
         // TODO: llama a esperarIntro y después a cambiarTurno.
         esperarIntro();
         cambiarTurno();
@@ -342,7 +343,6 @@ public class Combate
         System.out.println("¡" + ganador.getNombre() + " gana el combate!");
         System.out.println("**********************************");
     }
-    
     public void mostrarPoderes(Pokemon pokemon){
        /* TODO: Muestra por consola los poderes del pokemon. 
         * Pista: Usar toString() de Poder. 
