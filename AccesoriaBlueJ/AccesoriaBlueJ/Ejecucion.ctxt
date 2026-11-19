@@ -1,0 +1,13 @@
+#BlueJ class context
+#Thu Nov 19 21:02:16 CET 2026
+comment0.target=Ejecucion
+comment1.params=args
+comment1.target=void main(java.lang.String[])
+comment2.params=tienda
+comment2.target=void realizarVariasVentas(Tienda)
+comment2.text=\ TODO ****************************\r\n    DESARROLLE LOS METODOS QUE SE PIDEN\r\n
+comment3.params=tienda
+comment3.target=void verAlmacen(Tienda)
+comment4.params=tienda
+comment4.target=void venderAccesorios(Tienda)
+numComments=5
